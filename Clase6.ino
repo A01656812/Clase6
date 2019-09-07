@@ -37,7 +37,7 @@ void setup()
 	delay(1000);
 	start_time = millis();
 
-	pwm.setup(LED_BUILTIN, 1000, 0, 16);
+	pwm.setup(LED_BUILTIN, 1000, 0, 8);
 	
 };
 
@@ -57,12 +57,4 @@ void loop()
 		delay(40);
 	}
 
-		delay(3000);
-	for (i = 100; i > 0; i--)
-	{
-		pwm.setPWM(i);
-		delay(40);
-	}
-	if (i <= 0)
-		delay(3000);
 }

@@ -13,7 +13,7 @@ PWM::~PWM()
 {
 }
 
-void PWM::setup(uint8_t pin, float frequency, uint8_t channel, uint8_t bits_resolution )
+void PWM::setup(uint8_t pin, double frequency, uint8_t channel, uint8_t bits_resolution )
 {
 	_pin = pin;
 	_channel = channel;
@@ -29,8 +29,8 @@ void PWM::setPWM(float duty_cycle)
 {
 	if (duty_cycle > 100)
 		duty_cycle = 100;
-	if (duty_cycle < 100)
-		duty_cycle = 100;
+	if (duty_cycle < 0)
+		duty_cycle = 0;
 	_duty_cycle = duty_cycle;
 	ledcWrite(_channel, _resolution * _duty_cycle / 100);
 
@@ -43,4 +43,3 @@ void PWM::setFrequency(float frequency)
 	_frequency=frequency;
 	ledcWriteTone(_channel,_frequency);
 }
-

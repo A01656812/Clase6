@@ -15,7 +15,7 @@ public:
 	PWM();
 	PWM(uint8_t pin);
 	~PWM();
-	void setup(uint8_t pin, float frequency, uint8_t channel, uint8_t bits_resolution);
+	void setup(uint8_t pin, double frequency, uint8_t channel, uint8_t bits_resolution);
 	void setPWM(float duty_cycle);
 	void setFrequency(float frequency);
 protected:
@@ -27,4 +27,3 @@ protected:
 	uint16_t _resolution;
 };
 #endif
-
